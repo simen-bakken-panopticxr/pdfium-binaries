@@ -35,6 +35,12 @@ case "$OS-$CPU" in
       -D CMAKE_CXX_COMPILER="i686-linux-android16-clang++"
     )
     ;;
+  ios-arm64)
+    CMAKE_ARGS+=(
+      -D CMAKE_SYSTEM_NAME="iOS"
+      -D CMAKE_OSX_ARCHITECTURES="arm64"
+    )
+    ;;
   linux-arm)
     CMAKE_ARGS+=(
       -D CMAKE_C_COMPILER="arm-linux-gnueabihf-gcc"
