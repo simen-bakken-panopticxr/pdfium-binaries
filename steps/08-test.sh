@@ -39,6 +39,7 @@ case "$OS-$CPU" in
     CMAKE_ARGS+=(
       -D CMAKE_SYSTEM_NAME="iOS"
       -D CMAKE_OSX_ARCHITECTURES="arm64"
+      --debug-find
     )
     ;;
   linux-arm)
