@@ -28,7 +28,7 @@ jobs:
           git clone -b "${{ github.event.inputs.branch }}" https://pdfium.googlesource.com/pdfium.git
           cat <<END >> RELEASE.md
           ### Changes
-          Commits between `$PREVIOUS_REV` and `$CURRENT_REV`:
+          Commits between \`$PREVIOUS_REV\` and \`$CURRENT_REV\`:
           END
           git -C "pdfium" log origin/${PREVIOUS_REV}.. --pretty=format:'* [%s](https://pdfium.googlesource.com/pdfium/+/%H)' >> RELEASE.md
       - name: Cat
