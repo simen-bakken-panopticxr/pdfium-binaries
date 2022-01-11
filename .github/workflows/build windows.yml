@@ -1,4 +1,4 @@
-name: Build test
+name: Build windows
 
 on:
   workflow_dispatch:
@@ -19,9 +19,17 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - artifact: pdfium-win-arm
+            target_os: win
+            target_cpu: arm
+            runner: windows-2019
           - artifact: pdfium-win-arm64
             target_os: win
             target_cpu: arm64
+            runner: windows-2019
+          - artifact: pdfium-win-x64
+            target_os: win
+            target_cpu: x64
             runner: windows-2019
 
     runs-on: ${{ matrix.runner }}
